@@ -1,0 +1,66 @@
+{% extends 'equipment/base.html' %}
+
+{% block content %}
+<div class="list">
+	<h3>List of equipment</h3>
+	<table>
+		<thead class="sortable">
+			<td>Inventory Num</td><td>Serial Num</td><td>Name Ru</td><td>Name En</td><td>Manufacturer</td><td>Person in Charge</td><td>Room</td><td>Needs Service</td><td>Last Service</td>
+			<td>Next Service</td><td>Power Consumption</td><td>Edit</td>
+		</thead>
+		{% for equipment in equipments %}
+		<tr class='eq_row'>
+			<td>
+				{{ equipment.inv_number }}
+			</td>
+
+			<td>
+				{{ equipment.ser_number }}
+			</td>
+
+			<td>
+				{{ equipment.name_ru }}
+			</td>
+
+			<td>
+				{{ equipment.name_en }}
+			</td>
+
+			<td>
+				{{ equipment.manufacturer }}
+			</td>
+			
+			<td>
+				{{ equipment.person_incharge }}
+			</td>
+
+			<td>
+				{{ equipment.room }}
+			</td>
+			
+			<td>
+				{{ equipment.service }}
+			</td>
+			
+			<td>
+				{{ equipment.last_service }}
+			</td>
+			
+			<td>
+				{{ equipment.next_service }}
+			</td>
+			
+			<td>
+				{{ equipment.power_wt }}
+			</td>
+
+			<td>
+				<button onclick="window.location='{% url 'eq_edit' inv_number=equipment.inv_number %}'">Edit</button>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+
+{% endblock content %}

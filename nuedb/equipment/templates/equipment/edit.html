@@ -1,0 +1,11 @@
+{% extends 'equipment/base.html' %}
+
+{% block content %}
+
+<form class="edit_dialog" id="eq_edit_form" name="eq_edit_form" action="" method="POST">{% csrf_token %}
+	<h3>Edit an equipment</h3>
+	{{ eq_edit_form.as_p }}
+	<button type="submit">Save changes</button>
+</form>
+
+{% endblock content %}

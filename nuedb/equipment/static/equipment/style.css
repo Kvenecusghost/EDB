@@ -1,0 +1,126 @@
+header {
+	display: inline-block;
+	top: 0px;
+	left: 0px;
+	background-color: #82593d;
+	width: 100%;
+	color: white;
+	margin: 0px 0px 0.5em 0em;
+}
+
+header > div {
+	display: inline;
+	padding: 0.7em 0.7em 0.7em 0.7em;
+	/*margin: 0.5em 0.5em 0.5em 0.5em;*/
+}
+
+header > div:hover {
+	cursor: pointer;
+}
+
+header > .log_btn {
+	float: right;
+}
+
+header > .log_btn:hover {
+	background-color: #b68463;
+	cursor: pointer;
+}
+
+#body {
+	display: block;
+	width: 100%;
+}
+
+h3 {
+	border-bottom: #82593d 3px solid;
+}
+
+/*===========================================
+LIST Style
+=============================================*/
+.list {
+	display: block;
+	padding: 0.5em;
+	margin: .5em .5em .5em .5em;
+	background-color: #f0f0f0;
+}
+
+table {
+	display: inline-block;
+	max-width: 85em;
+	margin: auto;
+	left: 0em;
+	right: 0em;
+}
+table, th, td {
+	border: 1px #c0c0c0 solid;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0.5em;
+}
+
+/* Sortable tables */
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+
+/*===========================================
+MENU Style
+=============================================*/
+.menu {
+	display: inline-block;
+	padding: 0.7em 0.7em 0.7em 0.7em;
+}
+
+.menu:hover {
+	background-color: #b68463;
+}
+
+/*===========================================
+EDIT Dialog Style
+=============================================*/
+.edit_dialog {
+	margin: auto;
+	left: 0px;
+	padding: 2em;
+	right: 0px;
+	background-color: #f0f0f0;
+	width: 40em;
+}
+
+.edit_dialog > p > label {
+	display: inline-block;
+	width: 10em;
+}
+
+.edit_dialog > p > input{
+	display: inline-block;
+	width: 17em;
+}
+
+.edit_dialog > img {
+	display: inline-block;
+	width: 100%;
+}
+
+th > img {
+	width: 5em;
+}
+
+h3 > button {
+	border: 0px;
+	font-size: 0.9em;
+}
+
+h3 > button.hover {
+	cursor: pointer;
+}
+
+#hazards, th, tr {
+	border-collapse: collapse;
+	border: 10px blue;
+}

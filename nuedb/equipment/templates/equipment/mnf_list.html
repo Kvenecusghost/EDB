@@ -1,0 +1,43 @@
+{% extends 'equipment/base.html' %}
+
+{% block content %}
+	<div class="list">
+	<h3>List of manufacturers<span style="float: right"><a href="{% url 'mnf_new' %}">Add New</a></span></h3>
+	<table class="sortable">
+		<thead>
+			<td>Name</td><td>Country</td><td>City</td><td>Mail</td><td>Phone</td><td>Site</td><td>Edit</td>
+		</thead>
+		{% for mnf in manufacturers %}
+			<tr class='eq_row'>
+				<td>
+					{{ mnf.name }}
+				</td>
+
+				<td>
+					{{ mnf.country }}
+				</td>
+
+				<td>
+					{{ mnf.city }}
+				</td>
+
+				<td>
+					{{ mnf.mail }}
+				</td>
+
+				<td>
+					{{ mnf.phone }}
+				</td>
+				
+				<td>
+					{{ mnf.site }}
+				</td>
+
+				<td>
+					<button onclick="window.location='{% url 'mnf_edit' name=mnf.name %}'">Edit</button>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'equipment/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<form class="edit_dialog" id="room_new_form" name="room_new_form" action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+	<h3>Add new Room <button type="submit" style="float: right">Add</button></h3>
+	{% for field in room_edit_form %}
+		{% if field.label == 'Caution' %}
+			<h3>Caution signs</h3>
+			<table>
+				<tr id="hazards">
+					<th><img src="{% static 'img_hazard/biohazard.png' %}"></th>
+					<th><img src="{% static 'img_hazard/flamable.png' %}"></th>
+					<th><img src="{% static 'img_hazard/burstable.png' %}"></th>
+					<th><img src="{% static 'img_hazard/poisonous.png' %}"></th>
+					<th><img src="{% static 'img_hazard/acid.png' %}"></th>
+					<th><img src="{% static 'img_hazard/high voltage.png' %}"></th>
+				</tr>
+				<tr>
+					{% for choice in room_edit_form.caution.field.choices %}
+						<th>
+							<p><input type="checkbox" name="caution" value="{{choice.0}}" id="id_caution_{{forloop.counter0}}"></p>
+							<label>{{choice.1}}</label>
+						</th>
+					{% endfor %}
+				</tr>
+			</table>
+		{% else %}
+			<p><label>{{ field.label }}:</label> {{ field }}</p>
+		{% endif %}
+	{% endfor %}
+
+
+	<h3>Plan</h3>
+ 	<p>
+		<label for="id_plan">Select an image:</label>
+		<input type="file" name="plan" id="id_plan">
+	</p>
+</form>
+
+{% endblock content %}

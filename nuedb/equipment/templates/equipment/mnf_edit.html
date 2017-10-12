@@ -1,0 +1,11 @@
+{% extends 'equipment/base.html' %}
+
+{% block content %}
+
+<form class="edit_dialog" id="mnf_edit_form" name="mnf_edit_form" action="" method="POST">{% csrf_token %}
+	<h3>Edit manufacturer</h3>
+	{{ mnf_edit_form.as_p }}
+	<button type="submit">Save changes</button>
+</form>
+
+{% endblock content %}

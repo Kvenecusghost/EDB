@@ -1,0 +1,23 @@
+<html>
+<head>
+{% load static %}
+	<title>Equipment List</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'equipment/style.css' %}"/>
+</head>
+<body>
+	<header>
+		<div class="menu" onclick="window.location='{% url 'list' %}'">Home</div>
+		{% if email %}
+			<div class="log_btn" onclick="window.location='{% url 'logout' %}'">Logout {{ email }}
+		{% else %}
+			<div class="log_btn" onclick="window.location='{% url 'login' %}'">Login
+		{% endif %}
+		</div>
+		<div class="log_btn" onclick="window.location='{% url 'register' %}'">Register</div>
+	</header>
+	<div id="body">
+		{% block content %}
+		{% endblock %}		
+	</div>
+</body>
+</html>

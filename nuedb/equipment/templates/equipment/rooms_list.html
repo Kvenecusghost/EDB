@@ -1,0 +1,43 @@
+{% extends 'equipment/base.html' %}
+
+{% block content %}
+	<div class="list">
+	<h3>List of rooms<span style="float: right"><a href="{% url 'room_new' %}">Add New</a></span></h3>
+	<table class="sortable">
+		<thead>
+			<td>Block</td><td>Number</td><td>Department</td><td>Person in charge</td><td>Autonomous Power</td><td>Type</td><td>Edit</td>
+		</thead>
+		{% for room in rooms %}
+			<tr class='eq_row'>
+				<td>
+					{{ room.block }}
+				</td>
+
+				<td>
+					{{ room.number }}
+				</td>
+
+				<td>
+					{{ room.department }}
+				</td>
+
+				<td>
+					{{ room.person_incharge }}
+				</td>
+
+				<td>
+					{{ room.autonomous_power }}
+				</td>
+				
+				<td>
+					{{ room.room_type }}
+				</td>
+
+				<td>
+					<button onclick="window.location='{% url 'room_edit' number=room.number %}'">Edit</button>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock content %}
