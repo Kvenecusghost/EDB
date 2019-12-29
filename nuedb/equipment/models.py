@@ -145,7 +145,8 @@ class Equipment(models.Model):
         'Room',
         max_length=5,
         null=True,
-        blank=True
+        blank=True,
+        on_delete=models.SET_NULL
     )
     manual = models.FileField(
         null=True,
