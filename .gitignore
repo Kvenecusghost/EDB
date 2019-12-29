@@ -1,2 +1,6 @@
 nuedb/equipment/migrations
+nuedb/extuser/migrations
+nuedb/equipment/__pycache__
+nuedb/extuser/__pycache__
+nuedb/__pycache__
 edbenv
